@@ -1,0 +1,9 @@
+{
+	"name": "MoviesETLDF",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0ad59e53-c230-4f8d-9d6f-cba220c51163",
+		"tenantId": "e8911c26-cf9f-4a9c-878e-527807be8791"
+	}
+}
