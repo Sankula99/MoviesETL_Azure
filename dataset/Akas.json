@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "Akas",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "Movies1ETL",
