@@ -1,0 +1,70 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Movies",
+						"type": "DatasetReference"
+					},
+					"name": "Movie"
+				},
+				{
+					"dataset": {
+						"referenceName": "Tags",
+						"type": "DatasetReference"
+					},
+					"name": "Tag"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "select1"
+				},
+				{
+					"name": "select2"
+				},
+				{
+					"name": "derivedColumn1"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          movieId as string,",
+				"          title as string,",
+				"          genres as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> Movie",
+				"source(output(",
+				"          userId as string,",
+				"          movieId as string,",
+				"          tag as string,",
+				"          timestamp as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> Tag",
+				"Tag select(mapColumn(",
+				"          movieId,",
+				"          tag",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"Movie select(mapColumn(",
+				"          movieId,",
+				"          title,",
+				"          year = title",
+				"     ),",
+				"     skipDuplicateMapInputs: false,",
+				"     skipDuplicateMapOutputs: true) ~> select2",
+				"select2 derive(year = replace(split(year, '(')[2], ')', ''),",
+				"          title = replace(split(year, '(')[1], ')', '')) ~> derivedColumn1"
+			]
+		}
+	}
+}
