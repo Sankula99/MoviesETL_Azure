@@ -1,0 +1,38 @@
+{
+	"name": "episode",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Movies1ETL",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "title.episode.tsv.gz",
+				"container": "imdbfiles"
+			},
+			"columnDelimiter": "\t",
+			"compressionCodec": "gzip",
+			"compressionLevel": "Optimal",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003t���m;�\u001d\u0016\u001f�bO��\"�Nd�\u0005\u000e",
+				"type": "String"
+			},
+			{
+				"name": "iH��o�Ĝ\u0000XU�ޠ\u000e�\u0017\u001b\u0010\u0004A\u0010��_��������?���������������������/���������\u001f����_���������?���J�m����",
+				"type": "String"
+			},
+			{
+				"name": "y�������/����i�������/�[\u0017�g�\u0002_s��6<",
+				"type": "String"
+			}
+		]
+	}
+}
