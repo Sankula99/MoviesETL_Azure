@@ -1,0 +1,30 @@
+{
+	"name": "imdbRatings",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Movies1ETL",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "title.ratings.tsv.gz",
+				"container": "imdbfiles"
+			},
+			"columnDelimiter": "\t",
+			"rowDelimiter": "\r",
+			"compressionCodec": "gzip",
+			"escapeChar": "\\",
+			"firstRowAsHeader": false,
+			"quoteChar": null
+		},
+		"schema": [
+			{
+				"name": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003d}I�E�n��e1\u001fj�n\u001b\u0019dn\u0018��Al ���s�*\u0016���7�\u0005\u001d��(����������߿��������������?���?����\u001f������������?�_�m\t*\u001f���2!��o����+T��B�W��ϢP�",
+				"type": "String"
+			}
+		]
+	}
+}
