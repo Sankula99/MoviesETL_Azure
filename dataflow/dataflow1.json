@@ -63,7 +63,8 @@
 				"     skipDuplicateMapInputs: false,",
 				"     skipDuplicateMapOutputs: true) ~> select2",
 				"select2 derive(year = replace(split(year, '(')[2], ')', ''),",
-				"          title = replace(split(year, '(')[1], ')', '')) ~> derivedColumn1"
+				"          title = replace(split(year, '(')[1], ')', ''),",
+				"          DateID = uuid()) ~> derivedColumn1"
 			]
 		}
 	}
