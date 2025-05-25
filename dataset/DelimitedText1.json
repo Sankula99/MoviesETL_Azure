@@ -13,7 +13,7 @@
 				"fileName": "title.akas.tsv.gz",
 				"container": "imdbfiles"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "\t",
 			"compressionCodec": "gzip",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
