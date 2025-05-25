@@ -21,7 +21,35 @@
 		},
 		"schema": [
 			{
-				"name": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003��Ys\u001cǕ6|�߯ȉ��F�",
+				"name": "titleId",
+				"type": "String"
+			},
+			{
+				"name": "ordering",
+				"type": "String"
+			},
+			{
+				"name": "title",
+				"type": "String"
+			},
+			{
+				"name": "region",
+				"type": "String"
+			},
+			{
+				"name": "language",
+				"type": "String"
+			},
+			{
+				"name": "types",
+				"type": "String"
+			},
+			{
+				"name": "attributes",
+				"type": "String"
+			},
+			{
+				"name": "isOriginalTitle",
 				"type": "String"
 			}
 		]

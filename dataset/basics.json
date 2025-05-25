@@ -21,15 +21,39 @@
 		},
 		"schema": [
 			{
-				"name": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003��]s�8� ���+�O�5�",
+				"name": "tconst",
 				"type": "String"
 			},
 			{
-				"name": "�B����aL�R���Q�2���\u0005A\"\"P\"�h��2��\u001e�W���]O������Yݞ�S��s\u0007H\u0010 \u0001\"�zv�+\u0015t�N\u0012�;��˘�E��deJ�6k�f-XF��\t\u0001o�`K��T\u001d��4���MQ\u0012Q�L�xC�D�\u0015U^��޳�*i�fIsA���",
+				"name": "titleType",
 				"type": "String"
 			},
 			{
-				"name": "���\u001d�)V\\�oΉ�h\u001e���?��\u001c�L���o\u001f�\u001c���q\u0005p��y;�k4�Q��Fq�_�QA�(^1�\u0017>��=B��7�9�X�x��|Xc~�\\D\u000f�",
+				"name": "primaryTitle",
+				"type": "String"
+			},
+			{
+				"name": "originalTitle",
+				"type": "String"
+			},
+			{
+				"name": "isAdult",
+				"type": "String"
+			},
+			{
+				"name": "startYear",
+				"type": "String"
+			},
+			{
+				"name": "endYear",
+				"type": "String"
+			},
+			{
+				"name": "runtimeMinutes",
+				"type": "String"
+			},
+			{
+				"name": "genres",
 				"type": "String"
 			}
 		]

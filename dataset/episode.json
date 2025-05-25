@@ -22,15 +22,19 @@
 		},
 		"schema": [
 			{
-				"name": "\u001f�\b\u0000\u0000\u0000\u0000\u0000\u0000\u0003t���m;�\u001d\u0016\u001f�bO��\"�Nd�\u0005\u000e",
+				"name": "tconst",
 				"type": "String"
 			},
 			{
-				"name": "iH��o�Ĝ\u0000XU�ޠ\u000e�\u0017\u001b\u0010\u0004A\u0010��_��������?���������������������/���������\u001f����_���������?���J�m����",
+				"name": "parentTconst",
 				"type": "String"
 			},
 			{
-				"name": "y�������/����i�������/�[\u0017�g�\u0002_s��6<",
+				"name": "seasonNumber",
+				"type": "String"
+			},
+			{
+				"name": "episodeNumber",
 				"type": "String"
 			}
 		]
