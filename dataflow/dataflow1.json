@@ -17,9 +17,28 @@
 						"type": "DatasetReference"
 					},
 					"name": "Tag"
+				},
+				{
+					"dataset": {
+						"referenceName": "moviesrework",
+						"type": "DatasetReference"
+					},
+					"name": "movieToDate"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "moviesrework",
+						"type": "DatasetReference"
+					},
+					"name": "moviesRework",
+					"rejectedDataLinkedService": {
+						"referenceName": "Movies1ETL",
+						"type": "LinkedServiceReference"
+					}
+				}
+			],
 			"transformations": [
 				{
 					"name": "select1"
@@ -29,6 +48,9 @@
 				},
 				{
 					"name": "derivedColumn1"
+				},
+				{
+					"name": "select3"
 				}
 			],
 			"scriptLines": [
@@ -49,6 +71,9 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> Tag",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> movieToDate",
 				"Tag select(mapColumn(",
 				"          movieId,",
 				"          tag",
@@ -56,7 +81,7 @@
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select1",
 				"Movie select(mapColumn(",
-				"          movieId,",
+				"          movie_key = movieId,",
 				"          title,",
 				"          year = title",
 				"     ),",
@@ -64,7 +89,13 @@
 				"     skipDuplicateMapOutputs: true) ~> select2",
 				"select2 derive(year = replace(split(year, '(')[2], ')', ''),",
 				"          title = replace(split(year, '(')[1], ')', ''),",
-				"          DateID = uuid()) ~> derivedColumn1"
+				"          DateID = uuid()) ~> derivedColumn1",
+				"movieToDate select(skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select3",
+				"derivedColumn1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> moviesRework"
 			]
 		}
 	}
