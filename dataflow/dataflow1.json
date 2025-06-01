@@ -29,7 +29,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "moviesrework",
+						"referenceName": "rework",
 						"type": "DatasetReference"
 					},
 					"name": "moviesRework",
@@ -94,6 +94,11 @@
 				"     skipDuplicateMapOutputs: true) ~> select3",
 				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     input(",
+				"          movieId as string,",
+				"          title as string,",
+				"          genres as string",
+				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> moviesRework"
 			]
