@@ -1,0 +1,40 @@
+{
+	"name": "filteredmovies",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Movies1ETL",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "part-00000-db6ced0b-e768-4a7b-964c-944a8050e1e7-c000.csv",
+				"container": "imdbfiles"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "movie_key",
+				"type": "String"
+			},
+			{
+				"name": "title",
+				"type": "String"
+			},
+			{
+				"name": "year",
+				"type": "String"
+			},
+			{
+				"name": "DateID",
+				"type": "String"
+			}
+		]
+	}
+}
